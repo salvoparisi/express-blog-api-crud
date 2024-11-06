@@ -1,4 +1,10 @@
-const posts=[
+const posts = [
+    {
+        "id": "1",
+        "nome": "Luna",
+        "eta": 3,
+        "colore": "grigio"
+    },
     {
         "id": "2",
         "nome": "Milo",
