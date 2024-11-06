@@ -10,3 +10,7 @@ app.listen(PORT, ()=>{
 })
 
 app.post('/', postController.store)
+
+app.put('/:id', postController.update)
+
+app.delete('/:id', postController.destroy)
