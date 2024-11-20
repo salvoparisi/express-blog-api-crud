@@ -6,6 +6,8 @@ const notFoundMiddleware = require('./middlewares/notFoundMiddleware.js')
 const loggerMiddleware = require('./middlewares/loggerMiddleware.js')
 const PORT = 3000
 
+app.use(cors())
+
 app.use(express.json())
 
 app.use('/', loggerMiddleware)
@@ -14,11 +16,7 @@ app.use('/', (req, res, next) => {
     throw new Error("Hai spaccato tutto!");
   });
 */
-app.use(cors({
-  origin: `http://localhost:${PORT}`,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+
 app.get('/', postController.show)
 app.post('/', postController.store)
 app.put('/:id', postController.update)
