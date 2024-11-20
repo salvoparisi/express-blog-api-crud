@@ -10,6 +10,12 @@ const savePosts = (posts) => {
     fs.writeFileSync(dbPath, JSON.stringify(posts, null, 4));
 };
 
+
+const show = (req, res) => {
+    const posts = getPosts();
+    res.json(posts);
+};
+
 const store = (req, res) => {
     const posts = getPosts();
     const newPost = {
@@ -52,6 +58,7 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
+    show,
     store,
     update,
     destroy,
